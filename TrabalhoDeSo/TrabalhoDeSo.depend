@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1493761699 source:c:\users\marcp carujo\desktop\projetos_em_c++\trabalhodeso\main.cpp
+	<iostream>
+	<stdio.h>
+	<fstream>
+
+1493828490 
+
+1493859656 source:c:\users\marcp carujo\dropbox\projetos_em_c++\trabalhodeso\main.cpp
+	<iostream>
+	<stdio.h>
+	<fstream>
+	<unistd.h>
+	<errno.h>
+	<signal.h>
+	<sys/types.h>
+	<sys/wait.h>
+
+1493859656 h>
+
+1493859656 source:/home/linux/Dropbox/Projetos_em_C++/TrabalhoDeSo/main.cpp
+	<iostream>
+	<stdio.h>
+	<fstream>
+	<unistd.h>
+	<errno.h>
+	<signal.h>
+	<sys/types.h>
+	<sys/wait.h>
+
+1493919966 source:/home/linux/Dropbox/Projetos_em_C++/TrabalhoDeSo/main.cpp
+	<iostream>
+	<stdio.h>
+	<fstream>
+	<unistd.h>
+	<errno.h>
+	<signal.h>
+	<sys/types.h>
+	<sys/wait.h>
+	<stdlib.h>
+
