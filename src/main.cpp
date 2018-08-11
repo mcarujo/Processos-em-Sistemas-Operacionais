@@ -7,6 +7,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <stdlib.h>
+
 using namespace std;
                 class imagem{
                 public:
@@ -136,18 +137,18 @@ void imagem::somando_filtros(imagem A,imagem B){
 int main()
 {
     string img="washington.ascii";
-    cout << "\tIniciando processo de filtragem de Prewitt, o qual será aplicado na imagem " << img << " .\n";
-    cout << "\tProcesso Pai possue número: " << getpid() << "\n";
+    cout << "\tIniciando processo de filtragem de Prewitt, o qual ser� aplicado na imagem " << img << " .\n";
+    cout << "\tProcesso Pai possue n�mero: " << getpid() << "\n";
 
     if(fork()==0){
-        cout << "\n\tProcesso filho de numero : " << getpid() << " ,o qual o pai tem o numero : " << getppid() << " ,começando a filtragem horrizontal.\n";
+        cout << "\n\tProcesso filho de numero : " << getpid() << " ,o qual o pai tem o numero : " << getppid() << " ,come�ando a filtragem horrizontal.\n";
         imagem A("washington.ascii.pbm");
         imagem AH("P1",A.l,A.c);
         AH.filtrar_horizontal(A);
         AH.salvarimagem("washington.ascii_filtrado_horizontalmente.pbm");
         A.fechar();
         AH.fechar();
-        cout <<"\tProcesso filho de numero : " << getpid() << ", terminou a filtragem horizontal e será morto por um 'exit'. \n";
+        cout <<"\tProcesso filho de numero : " << getpid() << ", terminou a filtragem horizontal e ser� morto por um 'exit'. \n";
         exit(0);
         }
     else {
@@ -155,22 +156,22 @@ int main()
       ret1 = wait(&status1) ;
 
       if ((status1&255) == 0) {
-         cout << "\tProcesso filho numero : " << ret1 << " está morto.\n";
+         cout << "\tProcesso filho numero : " << ret1 << " est� morto.\n";
       }
       else{
-        cout << "\tProcesso filho não foi finalizado corretamente.\n";
+        cout << "\tProcesso filho n�o foi finalizado corretamente.\n";
       }
 
 
       if(fork()==0){
-        cout << "\n\tProcesso filho de numero : " << getpid() << " ,o qual o pai tem o numero : " << getppid() << " ,começando a filtragem vertical.\n";
+        cout << "\n\tProcesso filho de numero : " << getpid() << " ,o qual o pai tem o numero : " << getppid() << " ,come�ando a filtragem vertical.\n";
         imagem A("washington.ascii.pbm");
         imagem AV(A.tipo,A.l,A.c);
         AV.filtrar_vetircal(A);
         AV.salvarimagem("washington.ascii_filtrado_verticalmente.pbm");
         A.fechar();
         AV.fechar();
-        cout <<"\tProcesso filho de numero : " << getpid() << ", terminou a filtragem vertical e será morto por um 'exit'. \n";
+        cout <<"\tProcesso filho de numero : " << getpid() << ", terminou a filtragem vertical e ser� morto por um 'exit'. \n";
       exit(0);
       }
       else {
@@ -178,10 +179,10 @@ int main()
         ret2 = wait(&status2) ;
 
         if ((status2&255) == 0) {
-           cout << "\tProcesso filho numero: " << ret2 << ", está morto.\n";
+           cout << "\tProcesso filho numero: " << ret2 << ", est� morto.\n";
         }
         else {
-          cout << "\tProcesso filho não foi finalizado corretamente.\n";
+          cout << "\tProcesso filho n�o foi finalizado corretamente.\n";
         }
        }
 
